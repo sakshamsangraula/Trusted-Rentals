@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  // padding is useful to prevent the components from being at the edge of the screen
   padding: 20px 80px;
 }
 
 
+// adds padding to the two categories so that they are not right at the edge of the screen

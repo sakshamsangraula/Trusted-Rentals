@@ -9,11 +9,15 @@
     border: 1px solid black;
     margin: 0 7.5px 15px;
     overflow: hidden;
+    // the sass elementns here is important to show the menu-item box and overflow is set to hidden so that the
+    // background image does not come out of the border box
   
 
     &:hover{
         cursor: pointer;
 
+        // the background image slowly increases in size after hovering over the menu-item
+        // and the background color of the content(box containing title and subtitle) changes to sky blue
         & .background-image{
             transform: scale(1.1);
             transition: transform 6s cubic-bezier(0.25,0.45,0.45,0.95);
@@ -25,6 +29,7 @@
             background-color: skyblue;
         }
     }
+    // if the size is large then the height of the menu-item is set to 380px
     &.large{
         height: 380px;
     }
@@ -38,15 +43,16 @@
       margin-left: 7.5px;
     }
 
+    // displays the entire background image in the menu-item
     .background-image{
         width: 100%;
         height: 100%;
         background-position: center;
         background-size: cover;
     }
-
-   
+    
   
+    // needed for generating the border box and adding padding 
     .content {
       height: 90px;
       padding: 0 25px;
@@ -59,6 +65,8 @@
       opacity: 0.7;
       position: absolute;
   
+      // needed for styling the title with gray color with bold font and font-size of 22px along with 6px margin so there is space between 
+      // the title and the sub-title
       .title {
         font-weight: bold;
         margin-bottom: 6px;
@@ -66,6 +74,7 @@
         color: #4a4a4a;
       }
   
+      // makes the sub-title of lower font-size and less bold than the title
       .subtitle {
         font-weight: lighter;
         font-size: 16px;
