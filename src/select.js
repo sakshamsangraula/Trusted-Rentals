@@ -34,9 +34,8 @@ export default class SelectCar extends React.Component {
               <option value="SUV">SUV</option>
             </select>
           </label>
-          <input type="submit" value="Submit" />
         </form>
-        <createUserProfileDocument value = { this.handleChange } />
+        <createUserProfileDocument value = { this.state.value } />
 
           </Fragment>
 
