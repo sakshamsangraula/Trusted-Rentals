@@ -1,6 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import React from 'react';
+
 
 const config = {
   apiKey: "AIzaSyCtpj7oOcUUHwQgW7XEQbgBj3H1l0G86es",
@@ -15,12 +17,36 @@ const config = {
 
 firebase.initializeApp(config);
 
+
+// class FindValue extends React.Component{
+//   constructor(props){
+//     super(props);
+//   }
+
+//     state = {
+//     value: 'toyota'
+//   }
+
+// }
+
+export const addCarToUser = async(carId, userId) => {
+  // get document for user
+  // update user's document's collection for cars by appending carId
+  // save new user document in database
+}
+
+export const changeCarOwner = async(carId, userId) => {
+  // pull document for car using a carId
+  // update car owner with new userId
+}
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
+
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;

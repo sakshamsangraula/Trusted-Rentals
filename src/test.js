@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-const firestore = firebase.firestore();
+export const firestore = firebase.firestore();
 
 // collection is like an array and document is like an element in the array
 // we have a collection of users which has a single user document and that single user document has a collection of 

@@ -1,0 +1,28 @@
+.input-style 
+{
+height: 80px;
+width: 200px;
+border-radius: 5px;
+border: 2px solid gray;
+font-size: 17px;
+font-weight: bold;
+padding: 40px;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.typeimg {
+    width: 1200px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.submit-button{
+    width: 20px;
+    background-color: lightblue;
+    padding: 10px 20px;
+    color: black;
+}
+
+.h2{
+}
