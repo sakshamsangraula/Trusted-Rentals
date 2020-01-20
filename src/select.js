@@ -41,7 +41,7 @@ onChange = {event => this.onInputChange(event.target.value)}
 
 <br/>
 <br/>
-<Link className ="submit-button" to='/smartcontract'>Submit</Link>
+<Link className ="submit-button" to='/states/cities/cars/smartcontract'>Submit</Link>
 
 </div>
 );

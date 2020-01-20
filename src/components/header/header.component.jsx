@@ -9,8 +9,8 @@ import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 const Header = ({currentUser}) => (
     <div className = "header">
-        <Link className="logo-container, custom-button" to ="/">
-            HOME
+        <Link className="logo-container, header-button" to ="/">
+            TR
         </Link>
 
         <div className = "options">
