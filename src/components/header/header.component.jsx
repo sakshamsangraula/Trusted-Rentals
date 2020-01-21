@@ -24,7 +24,7 @@ const Header = ({currentUser}) => (
                 <CustomButton onClick={signInWithGoogle}> Sign in with Google </CustomButton>
 
             }
-            
+
             </Link>
         </div>
 

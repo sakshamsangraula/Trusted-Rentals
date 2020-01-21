@@ -1,8 +1,12 @@
 import React from "react";
 import "./homepage.styles.scss";
 import Directory from "../../components/directory/directory.component";
-import { AutoComplete, Button, message } from "antd";
+import { Menu, Icon, AutoComplete, Button, message } from "antd";
 import { Link } from "react-router-dom";
+
+//C:\Users\Rocketship\Documents\GitHub\carproject-frontend
+
+const { SubMenu } = Menu;
 
 const cities = {
   Alaska: ["Anchorage", "Juneau"],
@@ -73,6 +77,41 @@ class HomePage extends React.Component {
 
     return (
       <div className="homepage">
+      <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
+        <Menu.Item key="home">
+          <Link to ="/"></Link>
+          <Icon type="home" />
+          Home
+        </Menu.Item>
+
+        <Menu.Item key="about">
+          <Link to='/about'></Link>
+          <Icon type="question-circle" />
+          About
+        </Menu.Item>
+
+        <Menu.Item key="contact">
+          <Link to='/contact'></Link>
+          <Icon type="message" />
+          Contact
+        </Menu.Item>
+
+        <SubMenu
+                  title={
+                    <span className="submenu-title-wrapper">
+                      <Icon type="user" />
+                      My Account
+                    </span>
+                  }
+                >
+                  <Menu.Item key="setting:1"><Icon type="car" />My Cars</Menu.Item>
+                  <Menu.Item key="setting:1"><Icon type="setting" />Settings</Menu.Item>
+                  <Menu.Item key="setting:1"><Icon type="logout" />Log Out</Menu.Item>
+
+                </SubMenu>
+
+      </Menu>
+
         <Directory />
         <AutoComplete
           onSearch={this.onSearch}
