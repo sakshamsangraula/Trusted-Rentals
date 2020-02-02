@@ -12,9 +12,11 @@ import "./rentpagestates.styles.scss";
 import SelectCar from "./select";
 import SelectState from "./selecttag.JPG";
 
+
 const RentPage = () => (
   <div>
     <h1 class="rent-title">RENT PAGE</h1>
+
     <img class="rent-img" src={SelectState} alt="select a state" />
     <br />
     <br />

@@ -3,7 +3,7 @@ import './directory.styles.scss';
 import MenuItem from '../menu-item/menu-item.component';
 
 
-// Here, we want to store the state values 
+// Here, we want to store the state values
 // of the menu items we created such as
 // the title and background image
 // end them as props to menu-item component
@@ -14,9 +14,9 @@ class Directory extends Component{
         super();
 
         this.state = {
-            // the categories array contains 
-            // the properties: title, imageUrl, 
-            // id ,and size which can be passsed to 
+            // the categories array contains
+            // the properties: title, imageUrl,
+            // id ,and size which can be passsed to
             // menu-item
            categories: [
                // two objects with properties: title, imageUrl, id, and size are created
@@ -43,19 +43,19 @@ class Directory extends Component{
     render()
     {
         return (
-            <div className  = 'directory-menu'>
+            <div className="directory-menu">
                 {
-                    // destructuring title, imageUrl, id, and size and passing them to 
+                    // destructuring title, imageUrl, id, and size and passing them to
                     // MenuItem as props
 
                     // using the map function to take each title, imageUrl, id, and size from each object and send it to
                     // the menuItem component as a prop
-                    this.state.categories.map(({title, imageUrl, id, size, linkUrl}) => 
+                    this.state.categories.map(({title, imageUrl, id, size, linkUrl}) =>
                         (<MenuItem key= {id} title = {title} imageUrl={imageUrl} size={size} linkUrl={linkUrl}/>)
                         )
                 }
             </div>
-        )
+        );
     }
 }
 export default Directory;

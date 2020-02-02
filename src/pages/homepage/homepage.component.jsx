@@ -3,6 +3,8 @@ import "./homepage.styles.scss";
 import Directory from "../../components/directory/directory.component";
 import { Menu, Icon, AutoComplete, Button, message } from "antd";
 import { Link } from "react-router-dom";
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+import Logo from "./logo.PNG";
 
 //C:\Users\Rocketship\Documents\GitHub\carproject-frontend
 
@@ -15,6 +17,8 @@ const cities = {
 };
 
 const states = ["Alaska", "Oregon", "Texas"];
+
+var isLoggedIn = 0;
 
 // Directory component is rendered in a div and HomePage component is exported for App.js to import
 class HomePage extends React.Component {
@@ -43,11 +47,12 @@ class HomePage extends React.Component {
 
   onSelectCity = city => {
     this.setState({
-      city: city
+      city: city 
     });
   };
 
   render() {
+
     const { possibleStates, state, city } = this.state;
 
     const showCitySelect = state !== null;
@@ -77,6 +82,9 @@ class HomePage extends React.Component {
 
     return (
       <div className="homepage">
+
+      <img src={Logo} alt="Trusted Rentals Logo" />
+
       <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home">
           <Link to ="/"></Link>
@@ -97,32 +105,36 @@ class HomePage extends React.Component {
         </Menu.Item>
 
         <SubMenu
-                  title={
-                    <span className="submenu-title-wrapper">
+              title={
+                <span className="submenu-title-wrapper" onClick={signInWithGoogle}>
                       <Icon type="user" />
                       My Account
-                    </span>
-                  }
-                >
+                </span>
+              }
+              >
                   <Menu.Item key="setting:1"><Icon type="car" />My Cars</Menu.Item>
                   <Menu.Item key="setting:1"><Icon type="setting" />Settings</Menu.Item>
-                  <Menu.Item key="setting:1"><Icon type="logout" />Log Out</Menu.Item>
-
-                </SubMenu>
-
+        </SubMenu>
       </Menu>
 
+      <br />
+
         <Directory />
+        <br />
         <AutoComplete
           onSearch={this.onSearch}
           onSelect={this.onSelect}
           dataSource={possibleStates}
+          placeholder="Enter State"
         ></AutoComplete>
+        <br />
         <AutoComplete
           disabled={!showCitySelect}
           dataSource={cities[state]}
           onSelect={this.onSelectCity}
+          placeholder="Enter City"
         ></AutoComplete>
+        <br />
         {searchLink}
       </div>
     );
