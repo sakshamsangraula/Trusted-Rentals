@@ -5,14 +5,7 @@ import React from 'react';
 
 
 const config = {
-  apiKey: "AIzaSyCtpj7oOcUUHwQgW7XEQbgBj3H1l0G86es",
-    authDomain: "surgesignin.firebaseapp.com",
-    databaseURL: "https://surgesignin.firebaseio.com",
-    projectId: "surgesignin",
-    storageBucket: "surgesignin.appspot.com",
-    messagingSenderId: "122602854239",
-    appId: "1:122602854239:web:a824dfe236c2dea369c8ea",
-    measurementId: "G-3ZHCZXE9L5"
+
 };
 
 firebase.initializeApp(config);
